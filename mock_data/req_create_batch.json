@@ -1,0 +1,35 @@
+{
+	"username": "admin",
+	"password": "admin",
+	"batch": {
+		"regular_expressions": [{
+			"exp_1": "/ABABAB/"
+		}, {
+			"exp_2": "BAHBBABA"
+		}, {
+			"exp_3": "AFGFAGFA"
+		}],
+		"generic_expressions": [{
+			"exp_1": "aa11626"
+		}, {
+			"exp_2": "xcvvx15151"
+		}],
+		"data": [{
+			"batch_id": "incident_1-5-2018_22-56",
+			"table_type": "incident",
+			"table_type_id": "3ecf17e1-486c-40c5-a250-df0ba55be86d"
+		}, {
+			"batch_id": "problem_1-5-2018_22-56",
+			"table_type": "problem",
+			"table_type_id": "aaa0dceb-f1aa-49bb-aa3e-04ffb4cb3e0a"
+		}, {
+			"batch_id": "problem_1-5-2018_22-56",
+			"table_type": "problem",
+			"table_type_id": "bbb0dceb-f1aa-49bb-aa3e-04ffb4cb3e0a"
+		}, {
+			"batch_id": "change_request_1-5-2018_22-56",
+			"table_type": "change_request",
+			"table_type_id": "e476781a-512f-4467-948b-97e042f7c4aa"
+		}]
+	}
+}

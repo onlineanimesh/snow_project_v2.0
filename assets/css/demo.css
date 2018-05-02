@@ -1,0 +1,138 @@
+@media (min-width: 992px) {
+    .typo-line {
+        padding-left: 140px;
+        margin-bottom: 40px;
+        position: relative;
+    }
+    .typo-line .category {
+        transform: translateY(-50%);
+        top: 50%;
+        left: 0px;
+        position: absolute;
+    }
+    .sidebar .nav>li.active-pro {
+        position: absolute;
+        width: 100%;
+        bottom: 10px;
+    }
+}
+
+#map {
+    position: relative;
+    width: 100%;
+    height: calc(100% - 60px);
+    margin-top: 70px;
+}
+
+.places-buttons .btn {
+    margin-bottom: 30px
+}
+
+.space-70 {
+    height: 70px;
+    display: block;
+}
+
+.tim-row {
+    margin-bottom: 20px;
+}
+
+.tim-typo {
+    padding-left: 25%;
+    margin-bottom: 40px;
+    position: relative;
+}
+
+.tim-typo .tim-note {
+    bottom: 10px;
+    color: #c0c1c2;
+    display: block;
+    font-weight: 400;
+    font-size: 13px;
+    line-height: 13px;
+    left: 0;
+    margin-left: 20px;
+    position: absolute;
+    width: 260px;
+}
+
+.tim-row {
+    padding-top: 50px;
+}
+
+.tim-row h3 {
+    margin-top: 0;
+}
+
+/*===============Login Page================*/
+.login-page>.content,
+.lock-page>.content {
+    padding-top: 18vh;
+}
+
+.login-page .card-login {
+    box-shadow: 0 1px 4px 0 rgba(0, 0, 0, 0.14);
+    border-radius: 6px;
+    padding-bottom: 20px;
+    -webkit-transform: translate3d(0, 0, 0);
+    -moz-transform: translate3d(0, 0, 0);
+    -o-transform: translate3d(0, 0, 0);
+    -ms-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+}
+
+.login-page .card-login.card-hidden {
+    opacity: 0;
+    -webkit-transform: translate3d(0, -60px, 0);
+    -moz-transform: translate3d(0, -60px, 0);
+    -o-transform: translate3d(0, -60px, 0);
+    -ms-transform: translate3d(0, -60px, 0);
+    transform: translate3d(0, -60px, 0);
+}
+
+.login-page .card-login .btn-wd {
+    min-width: 180px;
+}
+
+.login-page .card-login .card-header {
+    margin-top: -40px;
+    margin-bottom: 20px;
+}
+
+.login-page .card-login .card-header .title {
+    margin-top: 10px;
+}
+.full-page>.content, .full-page>.footer {
+    position: relative;
+    z-index: 4;
+}
+
+.full-page .full-page-background {
+    position: absolute;
+    z-index: 1;
+    height: 100%;
+    width: 100%;
+    display: block;
+    top: 0;
+    left: 0;
+    background-size: cover;
+    background-position: center center;
+}
+.login-page .copyright, a{
+    color: #eee;
+}
+.login-config-content{
+	display: none;
+}
+
+/*Scroll up*/
+.scrollup {
+    width: 40px;
+    height: 40px;
+    position: fixed;
+    padding: 6px 12px !important;
+    bottom: 50px;
+    right: 5px;
+    display: none;
+    /*text-indent: -9999px;*/
+}

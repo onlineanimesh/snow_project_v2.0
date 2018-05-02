@@ -1,0 +1,9 @@
+{
+  "status": 200,
+  "username":"john",
+  "password":"3ecf17e1486c40c5a250df0ba55be86d",
+  "user_firstname":"John",
+  "user_email":"john.crawmer@example.com",
+  "is_user_authenticated": true,
+  "message": "You have loggedin successfully."
+}
