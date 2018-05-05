@@ -40,13 +40,13 @@
                         </a>
                     </li>
                     <li>
-                        <a href="operation.html">
+                        <a href="create_batch_operation.html">
                             <i class="material-icons">dashboard</i>
                             <p>Operation</p>
                         </a>
                     </li>
                     <li>
-                        <a href="scan-status.html">
+                        <a href="operation_status.html">
                             <i class="fa fa-qrcode"></i>
                             <p>Operation Status</p>
                         </a>
@@ -120,23 +120,55 @@
                 <div class="container-fluid">
                     <div class="row">
                         <div class="col-md-12">
-                            <div class="card card-nav-tabs">
+                            <div class="card card-nav-tabs">                                
                                 <div class="card-header" data-background-color="orange">
-                                    <h4>Scan Result</h4>
+                                    <h4>Scan Result <a href="#tableResult" data-table-id="tableResult" class="btn btn-primary btn-sm reload"><i class="material-icons">cached</i> Refresh</a></h4>
                                 </div>
                                 <div class="card-content table-responsive">
                                     <table id="tableResult" class="table table-hover">
                                         <thead class="text-primary">
+                                            <th></th>
                                             <th>Batch ID</th>
-                                            <th>RegEx</th>
-                                            <th>File Name</th>
-                                            <th>File Type</th>
-                                            <th>File Size</th>
-                                            <th>Download Completed</th>
-                                            <th>Scan Completed</th>
+                                            <th>Batch Status</th>
+                                            <th>Table Type</th>
+                                            <th>Table Type ID</th>
                                         </thead>
                                         <tbody></tbody>
                                     </table>
+
+                                    <!--<div class="panel-group" id="accordion_table_type_1">
+                                        <div class="panel panel-default">
+                                            <div class="panel-heading">
+                                                <h4 class="panel-title">
+                                                    <a data-toggle="collapse" data-parent="#accordion_table_type_1" href="#collapse_1">Group 1</a>
+                                                </h4>
+                                            </div>
+                                            <div id="collapse_1" class="panel-collapse collapse">
+                                                <div class="panel-body">Body</div>
+                                            </div>
+                                        </div>
+                                        <div class="panel panel-default">
+                                            <div class="panel-heading">
+                                                <h4 class="panel-title">
+                                                    <a data-toggle="collapse" data-parent="#accordion_table_type_1" href="#collapse_2">Group 2</a>
+                                                </h4>
+                                            </div>
+                                            <div id="collapse_2" class="panel-collapse collapse">
+                                                <div class="panel-body">Body</div>
+                                            </div>
+                                        </div>
+                                        <div class="panel panel-default">
+                                            <div class="panel-heading">
+                                                <h4 class="panel-title">
+                                                    <a data-toggle="collapse" data-parent="#accordion_table_type_1" href="#collapse_3">Group 3</a>
+                                                </h4>
+                                            </div>
+                                            <div id="collapse_3" class="panel-collapse collapse">
+                                                <div class="panel-body">Body</div>
+                                            </div>
+                                        </div>
+                                    </div>-->
+
                                 </div>
                             </div>
                         </div>

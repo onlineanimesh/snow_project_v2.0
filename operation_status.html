@@ -18,16 +18,14 @@
     <!--  CSS for Demo Purpose, don't include it in your project     -->
     <link href="assets/css/demo.css" rel="stylesheet" />
     <!--     Fonts and icons     -->
-    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.7.1/css/bootstrap-datepicker.min.css">
-    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-timepicker/0.5.2/css/bootstrap-timepicker.min.css">
     <link href="http://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css" rel="stylesheet">
-    <link href="http://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-glyphicons.css" rel="stylesheet">
     <link href='http://fonts.googleapis.com/css?family=Roboto:400,700,300|Material+Icons' rel='stylesheet' type='text/css'>
 </head>
 
-<body data-page-id="configuration">
+<body data-page-id="operation_status">
     <div class="wrapper">
         <div class="sidebar" data-color="orange" data-image="assets/img/sidebar-1.jpg">
+
             <div class="logo">
                 <a href="" class="simple-text">
                     <img src="assets/img/logo.png" style="width: 200px">
@@ -35,7 +33,7 @@
             </div>
             <div class="sidebar-wrapper">
                 <ul class="nav">
-                    <li class="active">
+                    <li>
                         <a href="configuration.html">
                             <i class="material-icons">settings</i>
                             <p>Configuration</p>
@@ -47,7 +45,7 @@
                             <p>Operation</p>
                         </a>
                     </li>
-                    <li>
+                    <li class="active">
                         <a href="operation_status.html">
                             <i class="fa fa-qrcode"></i>
                             <p>Operation Status</p>
@@ -74,7 +72,7 @@
                         </button>
                     </div>
                     <div class="collapse navbar-collapse">
-                        <h3 style="float: left; margin-top: 10px;">Create Configuration</h3>
+                        <h3 style="float: left; margin-top: 10px;">Operation Status</h3>
                         <ul class="nav navbar-nav navbar-right">
                             <li>
                                 <a href="operation.html" class="dropdown-toggle">
@@ -124,62 +122,20 @@
                         <div class="col-md-12">
                             <div class="card card-nav-tabs">
                                 <div class="card-header" data-background-color="orange">
-                                    <h4>Configuration</h4>
+                                    <h4>Operation Status <a href="#tableOperationData" data-table-id="tableOperationData" class="btn btn-primary btn-sm reload"><i class="material-icons">cached</i> Refresh</a></h4>
                                 </div>
-
-                                <form id="frmConfiguration" name="frmConfiguration" method="post">
-                                    <input type="hidden" name="action" value="create_batch">
-                                    <div class="card-content table-responsive">
-
-                                        <div class="row">
-                                            <div class="col-md-12">
-                                                <div class="form-group label-floating">
-                                                    <label class="control-label">Service Now URL</label>
-                                                    <input type="url" id="service_now_url" name="service_now_url" class="form-control" maxlength="255">
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <!--/.row-->
-
-                                        <div class="row">
-                                            <div class="col-md-6">
-                                                <div class="form-group label-floating">
-                                                    <label class="control-label">Service Now Username</label>
-                                                    <input type="text" id="service_now_username" name="service_now_username" class="form-control">
-                                                </div>
-                                            </div>
-                                            <div class="col-md-6">
-                                                <div class="form-group label-floating">
-                                                    <label class="control-label">Service Now Password</label>
-                                                    <input type="password" id="service_now_password" name="service_now_password" class="form-control">
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <!--/.row-->
-
-                                        <div class="row">
-                                            <div class="col-md-6">
-                                                <div class="form-group label-floating">
-                                                    <label class="control-label">Scanner Password</label>
-                                                    <input type="password" id="scanner_password" name="scanner_password" class="form-control">
-                                                </div>
-                                            </div>
-                                            <div class="col-md-6">
-                                                <div class="form-group label-floating">
-                                                    <label class="control-label">Confirm Scanner Password</label>
-                                                    <input type="password" id="confirm_scanner_password" name="confirm_scanner_password" class="form-control">
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <!--/.row-->
-
-                                        
-                                        <button type="button" id="btnSkipSaveConfiguration" class="btn btn-default pull-right">Skip & Continue</button>
-                                        <button type="button" id="btnSaveConfiguration" class="btn btn-primary pull-left">Save Configuration</button>
-                                        <div class="clearfix"></div>
-                                    </div>
-                                </form>
-
+                                <div class="card-content table-responsive">
+                                    <table id="tableOperationData" class="table table-hover">
+                                        <thead class="text-primary">
+                                            <th></th>
+                                            <th>Batch ID</th>
+                                            <th>Regular/Generic Expressions</th>
+                                            <th>Batch Status</th>
+                                        </thead>
+                                        <tbody>
+                                        </tbody>
+                                    </table>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -203,15 +159,6 @@
 <script src="assets/js/bootstrap-notify.js"></script>
 <!-- Material Dashboard javascript methods -->
 <script src="assets/js/material-dashboard.js?v=1.2.0"></script>
-<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.7.1/js/bootstrap-datepicker.min.js"></script>
-<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-timepicker/0.5.2/js/bootstrap-timepicker.min.js"></script>
-
-
-
-<script type="text/javascript">
-    $('.datepicker').datepicker();
-    $('#timepicker').timepicker();
-</script>
 <!-- Ajax -->
 <script src="assets/js/src/ajax.js"></script>
 <!-- App Specific JS -->

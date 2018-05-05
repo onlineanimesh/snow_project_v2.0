@@ -25,9 +25,11 @@
     <link href='http://fonts.googleapis.com/css?family=Roboto:400,700,300|Material+Icons' rel='stylesheet' type='text/css'>
 </head>
 
-<body data-page-id="configuration">
+<body data-page-id="create_batch_operation">
     <div class="wrapper">
+            
         <div class="sidebar" data-color="orange" data-image="assets/img/sidebar-1.jpg">
+
             <div class="logo">
                 <a href="" class="simple-text">
                     <img src="assets/img/logo.png" style="width: 200px">
@@ -35,13 +37,13 @@
             </div>
             <div class="sidebar-wrapper">
                 <ul class="nav">
-                    <li class="active">
+                    <li>
                         <a href="configuration.html">
                             <i class="material-icons">settings</i>
                             <p>Configuration</p>
                         </a>
                     </li>
-                    <li>
+                    <li class="active">
                         <a href="create_batch_operation.html">
                             <i class="material-icons">dashboard</i>
                             <p>Operation</p>
@@ -74,7 +76,7 @@
                         </button>
                     </div>
                     <div class="collapse navbar-collapse">
-                        <h3 style="float: left; margin-top: 10px;">Create Configuration</h3>
+                        <h3 style="float: left; margin-top: 10px;">Create Batch For Scanning</h3>
                         <ul class="nav navbar-nav navbar-right">
                             <li>
                                 <a href="operation.html" class="dropdown-toggle">
@@ -124,58 +126,58 @@
                         <div class="col-md-12">
                             <div class="card card-nav-tabs">
                                 <div class="card-header" data-background-color="orange">
-                                    <h4>Configuration</h4>
+                                    <h4>Create Batch</h4>
                                 </div>
 
-                                <form id="frmConfiguration" name="frmConfiguration" method="post">
+                                <form id="frmCreateBatch" name="frmCreateBatch" method="post">
                                     <input type="hidden" name="action" value="create_batch">
                                     <div class="card-content table-responsive">
-
-                                        <div class="row">
-                                            <div class="col-md-12">
-                                                <div class="form-group label-floating">
-                                                    <label class="control-label">Service Now URL</label>
-                                                    <input type="url" id="service_now_url" name="service_now_url" class="form-control" maxlength="255">
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <!--/.row-->
-
                                         <div class="row">
                                             <div class="col-md-6">
                                                 <div class="form-group label-floating">
-                                                    <label class="control-label">Service Now Username</label>
-                                                    <input type="text" id="service_now_username" name="service_now_username" class="form-control">
+                                                    <label class="control-label">Table Type (Press Ctrl to select multiple)</label>
+                                                    <select id="tableName" name="tableName" class="form-control" multiple="multiple">
+                                                    </select>
                                                 </div>
                                             </div>
-                                            <div class="col-md-6">
+                                            <div class="col-md-3">
                                                 <div class="form-group label-floating">
-                                                    <label class="control-label">Service Now Password</label>
-                                                    <input type="password" id="service_now_password" name="service_now_password" class="form-control">
+                                                    <label class="control-label">Date</label>
+                                                    <input id="date" name="date" class="datepicker form-control" data-date-format="dd/mm/yyyy" data-date-start-date="0d">
+                                                </div>
+                                            </div>
+                                            <div class="col-md-3">
+                                                <div class="form-group label-floating">
+                                                    <label class="control-label">Time</label>
+                                                    <input id="timepicker" name="timepicker" type="text" class="form-control">
                                                 </div>
                                             </div>
                                         </div>
-                                        <!--/.row-->
 
-                                        <div class="row">
-                                            <div class="col-md-6">
+                                        <div class="row dynamicExpressionContainer">
+                                            <div class="col-md-4">
                                                 <div class="form-group label-floating">
-                                                    <label class="control-label">Scanner Password</label>
-                                                    <input type="password" id="scanner_password" name="scanner_password" class="form-control">
+                                                    <label class="control-label">Expression Type</label>
+                                                    <select name="expressionType" class="form-control">
+                                                        <option value=""></option>
+                                                        <option value="regular_expression">Regular Expression</option>
+                                                        <option value="generic_expression">Generic Expression</option>
+                                                    </select>
                                                 </div>
                                             </div>
-                                            <div class="col-md-6">
+                                            <div class="col-md-4">
                                                 <div class="form-group label-floating">
-                                                    <label class="control-label">Confirm Scanner Password</label>
-                                                    <input type="password" id="confirm_scanner_password" name="confirm_scanner_password" class="form-control">
+                                                    <label class="control-label">Please enter expression</label>
+                                                    <input data-expression-type="" type="text" class="form-control" name="expression" maxlength="255">
                                                 </div>
+                                            </div>
+                                            <div class="col-md-4">
+                                                <a href="#" class="addMoreExpression btn btn-success btn-xs" title="Add More Expression"><i class="material-icons">add</i></a>
                                             </div>
                                         </div>
-                                        <!--/.row-->
 
-                                        
-                                        <button type="button" id="btnSkipSaveConfiguration" class="btn btn-default pull-right">Skip & Continue</button>
-                                        <button type="button" id="btnSaveConfiguration" class="btn btn-primary pull-left">Save Configuration</button>
+
+                                        <button type="submit" id="btnCreateBatch" class="btn btn-primary pull-left">Submit</button>
                                         <div class="clearfix"></div>
                                     </div>
                                 </form>
@@ -183,10 +185,33 @@
                             </div>
                         </div>
                     </div>
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="card card-nav-tabs">
+                                <div class="card-header" data-background-color="orange">
+                                    <h4>List Of Bacths <a href="#tableOperationData" data-table-id="tableOperationData" class="btn btn-primary btn-sm reload"><i class="material-icons">cached</i> Refresh</a></h4>
+                                </div>
+                                <div class="card-content table-responsive">
+                                    <table id="tableOperationData" class="table table-hover">
+                                        <thead class="text-primary">
+                                            <th></th>
+                                            <th>Batch ID</th>
+                                            <th>Regular/Generic Expressions</th>                                            
+                                            <th>Batch Status</th>
+                                        </thead>
+                                        <tbody>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
+            
         </div>
     </div>
+    <button class="btn btn-primary scrollup" data-toggle="tooltip" data-placement="left" data-original-title="Scroll to top">Top</button>
 </body>
 <!--   Core JS Files   -->
 <script src="assets/js/jquery-3.2.1.min.js" type="text/javascript"></script>
